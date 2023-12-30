@@ -48,4 +48,19 @@ func main() {
 	sort.Ints(highestScores)
 	fmt.Println("Sorted highest Scores : ", highestScores)
 	fmt.Println("is Sorted? ", sort.IntsAreSorted(highestScores))
+
+	// removing elements from the slice based on index
+	var courses = []string{"python", "golang", "web development", "rust", "swift"}
+
+	fmt.Println("Courses : ", courses)
+
+	// removing element on index 2
+	var index int = 2
+
+	// :index means there is no starting point althrough
+	// we should pick up elements before the mentioned index
+	// index + 1 is the index after the mentioned index that is to be removed
+	// ... is to include more arguments
+	courses = append(courses[:index], courses[index+1:]...)
+	fmt.Println("New Updated courses : ", courses)
 }
